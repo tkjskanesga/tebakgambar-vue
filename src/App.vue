@@ -51,12 +51,13 @@
 </script>
 
 <template>
+  <p @click="explodeEffect">fak</p>
   <Toaster position="top-center" richColors  />
   <CardGame v-if="statusFetch === 'success' && dataGameMatch" :datagame="dataGameMatch" :nextgame="NextGame"/>
   <Starting v-if="statusFetch === 'success' && !dataGameMatch" :startButton="SelectRandomImage"/>
   <Loading v-if="statusFetch === 'pending'" />
   <Error v-if="statusFetch === 'error'" :errormsg="statusError"/>
-  <div class="fixed top-0 left-0 justify-center items-center flex w-full h-full pointer-events-none">
-    <ConfettiExplosion v-if="visibleConfettiEffect" />
+  <div class="fixed top-0 left-0 justify-center items-center flex w-full h-[calc(100vh-200px)] pointer-events-none">
+    <ConfettiExplosion v-if="visibleConfettiEffect" :stageHeight="2000" :stageWidth="1500"/>
   </div>
 </template>

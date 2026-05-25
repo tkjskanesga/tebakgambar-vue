@@ -47,11 +47,11 @@
 
 <template>
   <div class="w-full h-dvh flex flex-col max-w-md justify-center items-center m-auto px-6">
-    <img :src="renderImg" width="100%" />
-    <small v-if="!!renderImg" class="my-5 text-neutral-500">{{ datagame.deskripsi }}</small>
+    <img v-if="!!renderImg" :src="renderImg" width="100%" alt="Gambar"/>
+    <small v-if="!!renderImg" class="my-5 text-neutral-500" :title="datagame.deskripsi">{{ datagame.deskripsi }}</small>
     <input
       placeholder="Tulis jawab disini..."
-      :class="['text-center border-none outline-none px-3 py-2', colorInput]"
+      :class="['w-full text-center border-none outline-none px-3 py-2', colorInput]"
       :value="inputAnswer"
       @input="eventInput"
     />
