@@ -51,7 +51,6 @@
 </script>
 
 <template>
-  <p @click="explodeEffect">fak</p>
   <Toaster position="top-center" richColors  />
   <CardGame v-if="statusFetch === 'success' && dataGameMatch" :datagame="dataGameMatch" :nextgame="NextGame"/>
   <Starting v-if="statusFetch === 'success' && !dataGameMatch" :startButton="SelectRandomImage"/>
